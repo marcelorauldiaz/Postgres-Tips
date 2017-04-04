@@ -17,7 +17,7 @@ PID|HOST|QUERY
 13522|	132.147.176.223| SELECT pid, client_addr,query FROM pg_stat_activity
 
 
-#Cancel a backend's current query
+Cancel a specific query
 
 ```
 pg_cancel_backend( PID )
