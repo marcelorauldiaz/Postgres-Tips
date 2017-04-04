@@ -1,7 +1,7 @@
 
-##The Statistics Collector
+## The Statistics Collector
 
-#View activity
+# View activity
 
 ```
 SELECT pid, client_addr,query FROM pg_stat_activity 
@@ -37,9 +37,29 @@ pg_restore -a -Fc -d databasename --schema="some_schema" --table="my_table" /tem
  ```
  pg_dump -U postgres -Fc -f  /temp/file_dump.dmp
  ```
+===================================================================================
 
+##Array to String
 
+#Query return more than one tuple.
 
+ ```
+select project_id from companies where id=1
+ ```
+ project_id |
+ -----------|
+ 1|
+ 2|
+ 
+ The above sometimes it's not useful, then to view it in one cell, just do:
+ 
+ ```
+select array_to_string( array(select project_id from companies where id=1), ', ') as  projects
+ ```
+projects   |
+-----------|
+1,2|
+ 
 
 
 
