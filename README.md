@@ -26,22 +26,22 @@ pg_cancel_backend( PID )
 ===================================================================================
 ## Backup & Restore
 
-#Restore specific table
+# Restore specific table
 
 ```
 pg_restore -a -Fc -d databasename --schema="some_schema" --table="my_table" /temp/file_dump.dmp
  ``` 
- 
-#file_dump previously was create with pg_dump
+
+file_dump previously was create with pg_dump
 
  ```
  pg_dump -U postgres -Fc -f  /temp/file_dump.dmp
  ```
 ===================================================================================
 
-##Array to String
+## Array to String
 
-#Query return more than one tuple.
+# Query return more than one tuple.
 
  ```
 select project_id from companies where id=1
